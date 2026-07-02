@@ -1,5 +1,8 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import Home from "./pages/Home";
+// import QueryClient from "./providers/QueryClient";
+import AppQueryProvider from "./providers/QueryClient";
 
 const styles = StyleSheet.create({
   container: {
@@ -12,9 +15,12 @@ const styles = StyleSheet.create({
 
 function App() {
   return (
-    <View style={styles.container}>
-      <Text>React Native App</Text>
-    </View>
+    <AppQueryProvider>
+      <View style={styles.container}>
+        <Home />
+        <Text>React Native App</Text>
+      </View>
+    </AppQueryProvider>
   );
 }
 
