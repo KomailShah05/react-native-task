@@ -7,6 +7,12 @@
             "dom",
             "es2017"
         ],
-        "jsx": "react"
+        "jsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "react-native": [
+                "node_modules/react-native-web"
+            ]
+        }
     }
 }
