@@ -13,7 +13,7 @@ const AppQueryProvider = ({ children }: PropsWithChildren) => {
             staleTime: 60 * 1000,
           },
         },
-      })
+      }),
   );
 
   return (

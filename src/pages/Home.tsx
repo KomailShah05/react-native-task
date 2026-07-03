@@ -1,14 +1,22 @@
 import * as React from "react";
 import { FlatList } from "react-native";
-import { fakeData } from "../fakeData";
 import ProductItem from "../components/ProductItem";
+import useProductListing from "../hooks/useProductListing";
 
 const Home = () => {
+  const { response, fetchNextPage, refetch } = useProductListing();
+
   return (
     <FlatList
-      data={fakeData}
+      data={response}
       keyExtractor={(item) => String(item.id)}
       renderItem={({ item }) => <ProductItem item={item} />}
+      removeClippedSubviews={true}
+      onReachEnd={() => {
+        console.log("reached end");
+      }}
+      refreshingControl={refetch}
+      onReachedEndTreshold={0.5}
     />
   );
 };
